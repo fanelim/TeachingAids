@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TeachingAids</string>
+    <string name="title_home">Home</string>
+    <string name="title_class">Class</string>
+    <string name="title_task">Task</string>
+
+    <!-- MainActivity底部导航栏 -->
+    <string name="title_note">Note</string>
+
+    <!-- SendNotiActivity提示语 -->
+    <string name="editnote_name">编辑通知</string>
+    <string name="input_title">输入标题</string>
+    <string name="input_content">输入正文</string>
+    <string name="option_click_to_choose">请选择班级</string>
+
+</resources>

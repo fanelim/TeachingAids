@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorDarkGray</item>
+        <item name="colorAccent">@color/blue</item>
+    </style>
+ <!--导航-->
+
+<style name="top_nav">
+    <item name="android:layout_width" >match_parent</item>
+    <item name="android:layout_height">44dp</item>
+    <item name="background">@color/colorPrimary</item>
+    <item name="android:gravity">center</item>
+    <item name="android:orientation">horizontal</item>
+</style>
+
+    <!--line-->
+    <style name="common_lines">
+        <item name="background">@color/blue</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+</resources>
