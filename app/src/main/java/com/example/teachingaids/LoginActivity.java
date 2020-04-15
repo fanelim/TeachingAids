@@ -3,18 +3,22 @@ package com.example.teachingaids;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.teachingaids.studentService.StuMain;
-import com.example.teachingaids.tutorService.TeaMain;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private RadioButton rb_1;//学生教师
@@ -70,19 +74,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                         if (rb1&&account.equals("001t") && psw.equals("123456")) {
 
+
+
                             Looper.prepare();
                             Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent=new Intent(LoginActivity.this, TeaMain.class);
+                            Intent intent=new Intent(LoginActivity.this,TeaMain.class);
                             intent.putExtra("name",account);
                             startActivity(intent);
                             Looper.loop();
 
+
+
                         } else if (!rb1 &&account.equals("001s") && psw.equals("123456")) {
                             Looper.prepare();
                             Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent=new Intent(LoginActivity.this, StuMain.class);
-                            intent.putExtra("name",account);
-                            startActivity(intent);
                             Looper.loop();
                             //一下代码为跳转学生界面
                           //  Intent intent=new Intent(LoginActivity.this,StuMain.class);

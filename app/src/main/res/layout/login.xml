@@ -4,9 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
    android:layout_marginTop="5dp"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
     <include layout="@layout/title"/>
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary" />
 
     <LinearLayout
         android:layout_width="72dp"
@@ -25,7 +29,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="156dp"
+        android:layout_height="158dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:background="@null"
@@ -40,17 +44,15 @@
             android:layout_width="fill_parent"
             android:layout_height="48dp">
 
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:checkedButton="@+id/RB_1"
                 android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/RB_1"
-                    android:layout_width="140dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_width="160dp"
                     android:buttonTint="@color/blue"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -59,7 +61,7 @@
                     android:textColor="@color/blue"/>
 
                 <RadioButton
-                    android:layout_width="172dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/blue"
                     android:layout_gravity="center_vertical"
@@ -76,10 +78,10 @@
             android:layout_height="1dp"
             android:background="@color/colorPrimary" />
 
-
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="48dp"
+            android:layout_marginTop="10dp"
             android:background="@null"
             android:gravity="center"
             android:orientation="horizontal">
@@ -109,14 +111,11 @@
             android:layout_height="1dp"
             android:background="@color/colorPrimary" />
 
-
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@null"
             android:gravity="center"
             android:orientation="horizontal">
-
 
             <ImageView
                 android:layout_width="20dp"
@@ -132,15 +131,17 @@
                 android:gravity="center_vertical"
                 android:hint="密码"
                 android:inputType="textPassword"
+                android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/blue"
                 android:textSize="14sp" />
 
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
+
 
         </LinearLayout>
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimary" />
 
     </LinearLayout>
     <LinearLayout
@@ -189,39 +190,53 @@
         android:background="@color/colorPrimary" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:gravity="center"
         android:orientation="horizontal"
-        >
-
+        android:paddingLeft="54dp"
+        android:paddingRight="54dp">
 
         <Button
             android:id="@+id/BT_register"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
+            android:layout_marginLeft="42dp"
             android:background="@null"
             android:shadowColor="@color/white"
             android:text="注册"
             android:textColor="@color/colorPrimary" />
 
-
-        <Button
-            android:id="@+id/BT_forget"
-            android:layout_width="167dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@null"
-            android:text="忘记密码?"
-            android:textColor="@color/colorPrimary" />
+    <Button
+        android:id="@+id/BT_forget"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="42dp"
+        android:background="@null"
+        android:text="忘记密码?"
+        android:textColor="@color/colorPrimary" />
 
 
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
 
     <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+    <View
+        android:layout_marginTop="10dp"
         android:layout_width="fill_parent"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
@@ -233,9 +248,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="65dp"
         android:orientation="horizontal"
-
         android:paddingLeft="54dp"
         android:paddingRight="54dp">
 
@@ -252,22 +265,19 @@
         android:textColor="@color/blue"
         android:layout_marginRight="28dp"
         android:layout_marginLeft="28dp"/>
-
     <View
         android:layout_width="0dp"
         android:layout_height="1px"
         android:background="#bfbfbf"/>
 </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:gravity="center"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginRight="40dp"
+        android:paddingRight="18dp"
+        android:paddingLeft="18dp"
         android:orientation="horizontal">
-
 
         <LinearLayout
             android:layout_width="0dp"
@@ -290,7 +300,6 @@
                 android:textSize="13sp"
                 android:textColor="@color/blue"/>
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -312,7 +321,6 @@
                 android:textSize="13sp"
                 android:textColor="@color/blue"/>
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

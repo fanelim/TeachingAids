@@ -17,9 +17,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.teachingaids.tutorService.TeaMain;
-import com.example.teachingaids.tutorService.ui.Class.AddClassActivity;
-
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
-
+        setToolbar();
         init();
         linearLayout = (LinearLayout)findViewById(R.id.layout_stu_id);
         rb_2 = (RadioButton) findViewById(R.id.rb_2);
@@ -57,16 +54,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if (!rb2)
             linearLayout.setVisibility(View.INVISIBLE);
 
-        ImageView back =(ImageView)findViewById(R.id.iv_registerback);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
     }
     public void init(){
         tel = (EditText) findViewById(R.id.et_phone_num);
@@ -76,6 +63,30 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         bt_register.setOnClickListener(this);
     }
 
+
+    //设置toolbar，并添加Back键
+    private void setToolbar(){
+        mtoolbar = findViewById(R.id.register_tb);
+        setSupportActionBar(mtoolbar);
+        ActionBar actionbar = getSupportActionBar();
+        if (actionbar != null){
+            actionbar.setDisplayHomeAsUpEnabled(true);
+            actionbar.setHomeAsUpIndicator(R.drawable.ic_left_circle);
+        }
+    }
+
+    //设置toolbar按钮功能
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:
+               Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+               startActivity(intent);
+                break;
+            default:
+        }
+        return true;
+    }
 
     @Override
     public void onClick(View v) {

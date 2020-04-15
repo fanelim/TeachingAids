@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tutorService.ui.task.TaskFragment">
+    tools:context=".ui.task.TaskFragment">
 
         <fragment
             android:id="@+id/home_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout = "@layout/tea_home_frag"
-            android:name="com.example.teachingaids.tutorService.ui.home.HomeFragment"/>
+            android:layout = "@layout/class_frag"
+            android:name="com.example.teachingaids.ui.home.HomeFragment"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

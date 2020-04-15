@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/tea_nav_view"
+        android:id="@+id/nav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
@@ -17,12 +17,12 @@
 
     <fragment
         android:layout_marginBottom="55dp"
-        android:id="@+id/tea_nav_host_fragment"
+        android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/tea_nav_view"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:navGraph="@navigation/tea_mobile_navigation" />
 
 
