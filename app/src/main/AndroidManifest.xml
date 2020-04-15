@@ -13,18 +13,24 @@
         android:roundIcon="@mipmap/teach"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.task.ExamActivity"></activity>
+        <activity android:name=".studentService.ui.MyNoti.MsgActivity"></activity>
+        <activity android:name=".studentService.ui.MyTask.StartExamActivity" />
+        <activity android:name=".studentService.ui.MyClass.StuActivity" />
+        <activity android:name=".tutorService.ui.task.ExamActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ui.Class.ClassActivity" />
-        <activity android:name=".ui.Class.AddClassActivity" />
-        <activity android:name=".ui.Class.StudentActivity" />
-        <activity android:name=".ui.task.AddNotiActivity" />
-        <activity android:name=".ui.task.NotiActivity" />
-        <activity android:name=".ui.task.ExamActivity"/>
-        <activity android:name=".ui.task.AddExamActivity"/>
-        <activity android:name=".TeaMain">
+        <activity android:name=".tutorService.TeaMain" />
+        <activity android:name=".tutorService.ui.Class.ClassActivity" />
+        <activity android:name=".tutorService.ui.Class.AddClassActivity" />
+        <activity android:name=".tutorService.ui.Class.StudentActivity" />
+        <activity android:name=".tutorService.ui.task.AddNotiActivity" />
+        <activity android:name=".tutorService.ui.task.NotiActivity" />
+        <activity
+            android:name=".tutorService.ui.task.ExamActivity"
+            tools:ignore="DuplicateActivity" />
+        <activity android:name=".tutorService.ui.task.AddExamActivity" />
+        <activity android:name=".studentService.StuMain" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

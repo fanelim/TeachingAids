@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.Class.ClassFragment">
+    tools:context=".tutorService.ui.Class.ClassFragment">
 
     <fragment
     android:id="@+id/class_title_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout = "@layout/class_frag"
-    android:name="com.example.teachingaids.ui.Class.ClassFragment"/>
+    android:layout = "@layout/tea_class_frag"
+    android:name="com.example.teachingaids.tutorService.ui.Class.ClassFragment"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

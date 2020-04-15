@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TeachingAids</string>
+    <string name="app_name">课堂互动系统</string>
     <string name="title_home">Home</string>
     <string name="title_class">Class</string>
     <string name="title_task">Task</string>
@@ -11,6 +11,8 @@
     <string name="editnote_name">编辑通知</string>
     <string name="input_title">输入标题</string>
     <string name="input_content">输入正文</string>
-    <string name="option_click_to_choose">请选择班级</string>
+    <string name="option_click_to_choose">请选择课堂</string>
+    <string name="title_notifications">我的通知</string>
+    <string name="title_mytask">我的任务</string>
 
 </resources>

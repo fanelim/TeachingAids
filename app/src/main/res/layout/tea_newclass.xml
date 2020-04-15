@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/light_gray">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_class"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_left_circle"
+                android:id="@+id/iv_newclassreturn"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新 课 堂"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_check_circle"
+                android:layout_marginRight="18dp"
+                android:layout_gravity="right"
+                android:id="@+id/iv_newclassadd"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/et_classname"
+            android:textSize="20sp"
+            android:textStyle= "bold"
+            android:textColor="@color/black"
+            android:gravity="start|center_vertical"
+            android:hint="输入班级名称"
+            android:textColorHint="@color/light_gray"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            app:elevation="5dp" />
+
+        <EditText
+            android:id="@+id/et_classcontent"
+            android:textSize="15sp"
+            android:lineSpacingExtra="5dp"
+            android:textColor="@color/black"
+            android:gravity="start|top"
+            android:hint="输入班级内容"
+            android:textColorHint="@color/light_gray"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="10dp"
+            app:elevation="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
