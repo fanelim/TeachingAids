@@ -4,6 +4,15 @@ public class Exam {
     public String examTitle;
     public String examContent;
     public int examScore;
+    public Long exam_classid;
+
+    public Long getExam_classid() {
+        return exam_classid;
+    }
+
+    public void setExam_classid(Long exam_classid) {
+        this.exam_classid = exam_classid;
+    }
 
     public String getExamTitle() {
         return examTitle;

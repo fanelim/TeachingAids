@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.task.TaskFragment">
+    tools:context=".tutorService.ui.task.TaskFragment">
 
     <fragment
         android:id="@+id/task_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout = "@layout/class_frag"
-        android:name="com.example.teachingaids.ui.task.TaskFragment"/>
+        android:layout = "@layout/tea_class_frag"
+        android:name="com.example.teachingaids.tutorService.ui.task.TaskFragment"/>
 
 
 

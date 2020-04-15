@@ -3,6 +3,7 @@ package com.example.teachingaids.db;
 import com.orm.SugarRecord;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Class extends SugarRecord {

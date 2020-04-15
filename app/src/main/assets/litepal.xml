@@ -10,7 +10,7 @@
     <list>
         <mapping class="com.example.teachingaids.db.Class"/>
         <mapping class="com.example.teachingaids.db.Stu"/>
-        <mapping class="com.example.teachingaids.ui.task.NotiCard"/>
+        <mapping class="com.example.teachingaids.tutorService.ui.task.NotiCard"/>
     </list>
 
     <!--
