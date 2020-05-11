@@ -130,6 +130,7 @@ public class TaskFragment extends Fragment {
                 }
             }
         });
+
         //评分
         setGrade.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,6 +142,7 @@ public class TaskFragment extends Fragment {
                 }
             }
         });
+
         //开启签到
         setCount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,6 +151,7 @@ public class TaskFragment extends Fragment {
                     Toast.makeText(getContext(), "请先选择课堂", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getContext(), "你选择的是" + final_spinner.getSelectedItem().toString() + "课堂", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });

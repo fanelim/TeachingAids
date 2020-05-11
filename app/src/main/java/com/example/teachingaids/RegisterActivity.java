@@ -88,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         String userTel = tel.getText().toString().trim(); //电话号
                         String userName = realname.getText().toString().trim(); //姓名
                         String userPassword = password.getText().toString().trim(); //密码
-                        String stu_id = stuid.getText().toString().trim(); //学生学号
+                      //  String stu_id = stuid.getText().toString().trim(); //学生学号
                         if (userTel.equals("") || userName.equals("") || userPassword.equals("")) {
                             Looper.prepare();
                            Toast.makeText(RegisterActivity.this, "输入不能为空！", Toast.LENGTH_SHORT).show();

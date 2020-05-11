@@ -2,6 +2,7 @@ package com.example.teachingaids.tutorService.ui.Class;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,18 +10,31 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.teachingaids.BuildConfig;
 import com.example.teachingaids.R;
 import com.example.teachingaids.db.Class;
 import com.example.teachingaids.db.Stu;
+import com.example.teachingaids.util.HttpUtil;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Response;
+import sdk.TeachApiException;
+import sdk.client.ClientConfig;
+import sdk.client.DefaultTeachClient;
+import sdk.client.TeachClient;
+import sdk.param.SignInParam;
+import sdk.vo.SubjectVO;
 
 
 public class ClassFragment extends Fragment {
@@ -100,7 +114,10 @@ public class ClassFragment extends Fragment {
     }
 
     private void init() {
+
+
         classList.clear();
+
         Class a = new Class();
         a.setClassName("高等数学");
         a.setClassContent("是大一计院的课程");
@@ -201,6 +218,7 @@ public class ClassFragment extends Fragment {
             }
         });
         queryClass();
+        queryFromServer();
     }
 
     private void queryClass(){
@@ -232,6 +250,25 @@ public class ClassFragment extends Fragment {
             queryFromServer(address,"province");
         }*/
     }
+
+    //根据输入地址从服务器上查数据
+    private void queryFromServer() {
+
+        HttpUtil.sendOkHttpRequest("http://192.168.101.6:8080/subject/get/main", new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+               if (BuildConfig.DEBUG) Log.d("ClassFragment", "e:" + e);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String responseText = response.body().string();
+
+                if (BuildConfig.DEBUG) Log.d("ClassFragment", responseText);
+            }
+        });
+    }
+
 
     private void queryStu(Class selectedClass){
         backButton.setVisibility(View.VISIBLE);
