@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/tb_exam"
+                android:id="@+id/test_title"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary">
@@ -24,36 +24,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_left_circle"
-                    android:id="@+id/iv_classreturn"/>
+                    android:id="@+id/iv_testreturn"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="新 测 验"
-                    android:textColor="@color/white"
+                    android:text="第一次测验"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:layout_gravity="center"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_check_circle"
-                    android:layout_marginRight="18dp"
-                    android:layout_gravity="right"
-                    android:id="@+id/iv_classadd"/>
 
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@color/light_gray"
             android:orientation="vertical"
-            android:padding="20dp"
+            android:padding="12dp"
             android:focusable="true"
             android:focusableInTouchMode="true">
             <View
@@ -63,12 +54,12 @@
                 tools:ignore="MissingConstraints"
                 />
             <EditText
-                android:id="@+id/et_examTitle"
+                android:id="@+id/et_test_title"
                 android:textSize="20sp"
                 android:textStyle= "bold"
                 android:textColor="@color/black"
                 android:gravity="start|center_vertical"
-                android:hint="输入题目正文"
+                android:hint="@string/input_title"
                 android:textColorHint="@color/colorPrimary"
                 android:maxLines="1"
                 android:layout_width="match_parent"
@@ -83,38 +74,20 @@
                 android:background="@color/colorPrimary"
                 tools:ignore="MissingConstraints"
                 />
+            <EditText
+                android:id="@+id/et_test_content"
+                android:textSize="18sp"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/black"
+                android:gravity="start|top"
+                android:hint="@string/input_content"
+                android:textColorHint="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="10dp"
+                app:elevation="5dp"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_gravity="right">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="测验分值"
-                android:textSize="25sp"
-                android:textColor="@color/colorPrimary"
-                android:gravity="right"/>
-
-                <EditText
-                    android:id="@+id/et_examScore"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="right"
-                    android:background="@color/white"
-                    android:gravity="end|top"
-                    android:hint="0—100"
-                    android:inputType="number"
-                    android:lineSpacingExtra="5dp"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/colorPrimary"
-                    android:textSize="15sp"
-                    app:elevation="5dp" />
-
-            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

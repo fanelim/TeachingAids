@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/light_gray">
 
 
@@ -23,7 +23,7 @@
             android:id="@+id/myclass_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="你的名字"
+            android:text="高琦琦"
             android:textColor="@color/white" />
 
         <TextView
@@ -90,14 +90,17 @@
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/ic_sign_in" />
 
+            <Button
+                android:id="@+id/stu_check_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击签到"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="280dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true" />
         </RelativeLayout>
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimary"
-            tools:ignore="MissingConstraints"
-            />
         <LinearLayout
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
@@ -105,11 +108,18 @@
             android:orientation="vertical"
             android:background="@color/white">
 
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints"
+                />
+
 
             <ListView
                 android:id="@+id/stu_class_listview"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:background="@color/white"
                 />
         </LinearLayout>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,31 +56,43 @@
             android:padding="12dp"
             android:focusable="true"
             android:focusableInTouchMode="true">
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints"
+                />
 
             <EditText
                 android:id="@+id/edit_note_title_et"
-                android:textSize="20sp"
-                android:textStyle= "bold"
-                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
                 android:gravity="start|center_vertical"
                 android:hint="@string/input_title"
-                android:textColorHint="@color/light_gray"
                 android:maxLines="1"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/white"
-                android:layout_marginBottom="20dp"
                 android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:elevation="5dp" />
 
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints"
+                />
             <EditText
                 android:id="@+id/edit_note_content_et"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 android:lineSpacingExtra="5dp"
                 android:textColor="@color/black"
                 android:gravity="start|top"
                 android:hint="@string/input_content"
-                android:textColorHint="@color/light_gray"
+                android:textColorHint="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white"

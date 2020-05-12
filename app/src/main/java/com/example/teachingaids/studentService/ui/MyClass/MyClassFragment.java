@@ -1,5 +1,7 @@
 package com.example.teachingaids.studentService.ui.MyClass;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -26,6 +29,8 @@ import com.example.teachingaids.db.Class;
 import com.example.teachingaids.db.Stu;
 import com.example.teachingaids.tutorService.ui.Class.ClassFragment;
 import com.example.teachingaids.tutorService.ui.Class.StudentActivity;
+import com.example.teachingaids.tutorService.ui.task.AddExamActivity;
+import com.example.teachingaids.tutorService.ui.task.ExamActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -57,7 +62,7 @@ public class MyClassFragment extends Fragment {
 
     private int currentLevel;
 
-    private Button backButton;
+    private Button backButton,checkinButton;
 
     private TextView titleText;
 
@@ -69,6 +74,7 @@ public class MyClassFragment extends Fragment {
         join = root.findViewById(R.id.iv_myaddclass);
         titleText = (TextView) root.findViewById(R.id.stu_title_text);
         backButton = (Button) root.findViewById(R.id.stu_back_button);
+        checkinButton = (Button) root.findViewById(R.id.stu_check_button);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +85,7 @@ public class MyClassFragment extends Fragment {
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "添加班级", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "添加课堂", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -116,7 +122,7 @@ public class MyClassFragment extends Fragment {
         stuList.clear();
         Stu s1 = new Stu();
         s1.setClassId(Long.valueOf(1));
-        s1.setStuName("高1");
+        s1.setStuName("高琦琦");
         s1.setStuId(Long.valueOf(1));
         s1.setTaskgrade(96);
         s1.setSigncount(2);
@@ -126,7 +132,7 @@ public class MyClassFragment extends Fragment {
         Stu s2 = new Stu();
         s2.setClassId(Long.valueOf(2));
         s2.setStuId(Long.valueOf(2));
-        s2.setStuName("线1");
+        s2.setStuName("王洋洋");
         s2.setSigncount(1);
         s2.setStuPhone("2222");
         stuList.add(s2);
@@ -134,7 +140,7 @@ public class MyClassFragment extends Fragment {
         Stu s3 = new Stu();
         s3.setClassId(Long.valueOf(2));
         s3.setStuId(Long.valueOf(3));
-        s3.setStuName("线2");
+        s3.setStuName("李彤彤");
         s3.setSigncount(0);
         s3.setStuPhone("3333");
         stuList.add(s3);
@@ -142,7 +148,7 @@ public class MyClassFragment extends Fragment {
         Stu s4 = new Stu();
         s4.setClassId(Long.valueOf(2));
         s4.setStuId(Long.valueOf(4));
-        s4.setStuName("线3");
+        s4.setStuName("刘萌萌");
         s4.setStuPhone("4444");
         s4.setSigncount(0);
         stuList.add(s4);
@@ -190,8 +196,9 @@ public class MyClassFragment extends Fragment {
     }
 
     private void queryClass(){
-        titleText.setText("班级列表 ");
+        titleText.setText("课堂列表 ");
         backButton.setVisibility(View.GONE);
+        checkinButton.setVisibility(View.GONE);
         //     classList = DataSupport.findAll(Class.class);
         /*Bundle bundle= MyClassFragment.this.getArguments();
         if(bundle !=null){
@@ -220,6 +227,7 @@ public class MyClassFragment extends Fragment {
 
     private void queryStu(Class selectedClass){
         backButton.setVisibility(View.VISIBLE);
+        checkinButton.setVisibility(View.VISIBLE);
         // stuList = DataSupport.where("classid = ?",String.valueOf(selectedStu.getClassId())).find(Stu.class);
         if (stuList.size() > 0){
             dataList.clear();
@@ -239,6 +247,23 @@ public class MyClassFragment extends Fragment {
             String address = "http://guolin.tech/api/china/" +provinceCode + "/" + cityCode;
             queryFromServer(address,"county");
         }*/
+        checkinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle("提示");
+                builder.setMessage("签到成功!");
+                builder.setCancelable(false); // 将对话框设置为不可取消
+                // 给按钮添加注册监听
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 点击按钮所调用的方法
+                    }
+                });
+                builder.show();
+            }
+        });
     }
 
 }

@@ -31,6 +31,8 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
 
     private List<Msg> mMsgList;
 
+    private boolean isread = false;
+
 
     public MsgAdapter(Context context, List<Msg> mMsgList)
     {
@@ -47,14 +49,17 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
         }
         View view = LayoutInflater.from(mContext).inflate(R.layout.list_item_my_msg,parent,false);
         final ViewHolder holder = new ViewHolder(view);
+
         holder.cardView.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
         {
+
+            notifyItemChanged(holder.getAdapterPosition());
                 int position = holder.getAdapterPosition();
                 Msg msg = mMsgList.get(position);
-                msg.isRead = true;
+                isread = true;
                 Intent intent = new Intent(mContext, MsgActivity.class);
                 intent.putExtra(MsgActivity.MSG_TITLE, msg.getTitle());
                 intent.putExtra(MsgActivity.MSG_CLASSNAME, msg.getClassName());
@@ -62,12 +67,13 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
                 mContext.startActivity(intent);
                 ////延时设置cardview颜色
 
-                holder.cardView.setBackgroundColor(Color.parseColor("#FFEFEFF4"));
-                notifyItemChanged(holder.getAdapterPosition());
+
         }
 
         });
-
+        if (isread == true){
+        holder.cardView.setBackgroundColor(Color.parseColor("#FFEFEFF4"));
+        }
         return holder;
     }
 
@@ -107,4 +113,5 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
         }
 
     }
+
 }

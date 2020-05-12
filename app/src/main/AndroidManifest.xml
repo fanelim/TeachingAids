@@ -26,6 +26,7 @@
         <activity android:name=".tutorService.TeaMain" />
         <activity android:name=".tutorService.ui.Class.ClassActivity" />
         <activity android:name=".tutorService.ui.Class.AddClassActivity" />
+        <activity android:name=".tutorService.ui.Class.StudentTestActivity"/>
         <activity android:name=".tutorService.ui.Class.StudentActivity" />
         <activity android:name=".tutorService.ui.task.AddNotiActivity" />
         <activity android:name=".tutorService.ui.task.NotiActivity" />

@@ -44,40 +44,12 @@
         android:gravity="center">
     </Spinner>
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimary"
-            tools:ignore="MissingConstraints"
-            />
 
     </LinearLayout>
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimary"
-            tools:ignore="MissingConstraints"
-            />
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:orientation="horizontal"
-    android:background="@color/white">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="开启签到"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@color/colorPrimary"/>
-
-
-</LinearLayout>
 
 
     <LinearLayout
+        android:layout_marginTop="5dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

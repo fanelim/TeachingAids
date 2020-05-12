@@ -81,35 +81,24 @@ public class MyNotiFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(msg_adapter);
-
+        msg_adapter.notifyDataSetChanged();
         return root;
     }
 
     private void initMsg() {
 
-        Msg m1 = new Msg();
-        m1.setClassName("高等数学");
-        m1.setTitle("关于上课时间");
-        m1.setContent("这周不上课");
-        m1.setImageId(R.drawable.ic_unreadmsg);
-        m1.setId(1);
-        msgList.add(m1);
-
-        Msg m12 = new Msg();
-        m12.setClassName("大学英语");
-        m12.setTitle("关于上课时间");
-        m12.setContent("这周四上两个小时");
-        m12.setImageId(R.drawable.ic_unreadmsg);
-        m12.setId(1);
-        msgList.add(m12);
 
         Msg m123 = new Msg();
         m123.setClassName("大学英语");
         m123.setTitle("关于考试内容");
-        m123.setContent("大一整本书");
+        m123.setContent("新视野2+阅读理解2全册+视听说教程");
         m123.setImageId(R.drawable.ic_unreadmsg);
         m123.setId(1);
         msgList.add(m123);
+
+
+
+
     }
 
     private void initClass() {
@@ -168,7 +157,7 @@ public class MyNotiFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position != class_data_list.size() - 1) {
-                    Toast.makeText(getContext(), "选择了 " + final_spinner.getSelectedItem().toString() + " 班级", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getContext(), "选择了 " + final_spinner.getSelectedItem().toString() + " 课堂", Toast.LENGTH_SHORT).show();
                     msg_data_list.clear();
                     selectedmsgList.clear();
                     for (Class c : classList) {

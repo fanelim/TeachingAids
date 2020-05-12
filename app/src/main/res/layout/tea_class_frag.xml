@@ -15,7 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp">
-
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            tools:ignore="MissingConstraints"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,20 +67,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:text="新的申请"
+                android:text="添加学生"
                 android:textColor="@color/colorPrimary"
                 android:textSize="25sp" />
             </LinearLayout>
 
         </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimary"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="31dp"
-            tools:layout_editor_absoluteY="157dp" />
 
         <LinearLayout
             android:layout_marginTop="10dp"
@@ -83,11 +80,17 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@color/white">
-
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints"
+                />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/white">
+
 
         <TextView
             android:id="@+id/title_text"
@@ -110,7 +113,7 @@
             android:id="@+id/invite_button"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="分享课堂"
+            android:text="邀请码"
             android:textColor="@color/colorPrimary"
             android:layout_marginRight="10dp"
             android:layout_centerVertical="true"
@@ -119,7 +122,12 @@
 
 
     </RelativeLayout>
-
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints"
+                />
     <ListView
         android:id="@+id/list_view"
         android:layout_width="fill_parent"

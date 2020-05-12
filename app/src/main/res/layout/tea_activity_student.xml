@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_marginTop="13dp"
     android:background="@color/light_gray">
@@ -44,226 +45,228 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/swipe_stu_refresh">
+            android:padding="12dp"
+            android:orientation="vertical">
 
-            <ScrollView
-                android:id="@+id/student_layout"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:scrollbars="none"
-                android:overScrollMode="never">
+                android:background="@color/white">
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="MissingConstraints"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="基本信息"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"/>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:background="@color/white">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:text="基本信息"
-                                android:textSize="20sp"
-                                android:textColor="@color/colorPrimary"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="姓名"
-                                    android:textSize="18sp"
-                                    android:textColor="@color/colorPrimary"
-                                    />
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="你的姓名"
-                                    android:gravity="right"
-                                    android:layout_marginRight="20dp"
-                                    android:id="@+id/show_name"/>
-                            </LinearLayout>
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
 
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="姓名"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimary"
+                    />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="学号"
-                                    android:textSize="18sp"
-                                    android:textColor="@color/colorPrimary"
-                                    />
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="你的学号"
-                                    android:gravity="right"
-                                    android:layout_marginRight="20dp"
-                                    android:id="@+id/show_stuid"/>
-                            </LinearLayout>
-
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="联系方式"
-                                    android:textSize="18sp"
-                                    android:textColor="@color/colorPrimary"
-                                    />
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="你的手机号"
-                                    android:gravity="right"
-                                    android:layout_marginRight="20dp"
-                                    android:id="@+id/show_phone"/>
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="15dp"
-                                android:background="@color/light_gray"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:layout_marginTop="10dp">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="签到次数"
-                                        android:layout_gravity="center"
-                                        android:gravity="center"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="35sp"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="80dp"
-                                        android:id="@+id/show_signcount"
-                                        android:hint="签到次数"
-                                        android:layout_marginLeft="120dp"
-                                        android:layout_centerVertical="true"
-                                        android:layout_alignParentLeft="true"
-                                        android:gravity="center"
-                                        android:textSize="25sp"/>
-
-                                </LinearLayout>
-                            </LinearLayout>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="15dp"
-                                android:background="@color/light_gray"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:layout_marginTop="10dp">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="测验1成绩"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="35sp"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="80dp"
-                                        android:id="@+id/show_grade"
-                                        android:hint="你的成绩"
-                                        android:layout_marginLeft="100dp"
-                                        android:layout_alignParentRight="true"
-                                        android:gravity="center"
-                                        android:textSize="25sp"/>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="15dp"
-                                android:background="@color/light_gray"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:layout_marginTop="10dp">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="测验2成绩"
-                                        android:gravity="center"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="35sp"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="80dp"
-                                        android:hint="NULL"
-                                        android:layout_marginLeft="120dp"
-                                        android:layout_alignParentRight="true"
-                                        android:gravity="center"
-                                        android:textSize="25sp"/>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="你的姓名"
+                        android:gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:id="@+id/show_name"/>
             </LinearLayout>
 
-            </ScrollView>
 
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学号"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="你的学号"
+                    android:gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/show_stuid"/>
+            </LinearLayout>
 
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系方式"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="你的手机号"
+                    android:gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/show_phone"/>
+            </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="MissingConstraints"
+                    />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="签到次数"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="35sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:id="@+id/show_signcount"
+                        android:hint="签到次数"
+                        android:layout_marginLeft="120dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center"
+                        android:textSize="25sp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="MissingConstraints"
+                    />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="测验1成绩"
+                        android:id="@+id/test_grade"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="35sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:id="@+id/show_grade"
+                        android:hint="你的成绩"
+                        android:layout_marginLeft="100dp"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:textSize="25sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="MissingConstraints"
+                    />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="测验2成绩"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="35sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:hint="NULL"
+                        android:layout_marginLeft="120dp"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:textSize="25sp"/>
+
+                    </LinearLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="MissingConstraints"
+                    />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

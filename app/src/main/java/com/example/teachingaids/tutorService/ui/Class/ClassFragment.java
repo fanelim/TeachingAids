@@ -43,8 +43,6 @@ public class ClassFragment extends Fragment {
 
     public static final int LEVEL_STU= 1;
 
-    private ProgressDialog progressDialog;
-
     private ListView listView;
 
     private android.widget.ArrayAdapter<String > adapter;
@@ -71,21 +69,6 @@ public class ClassFragment extends Fragment {
 
 
     private Button add;
-
-
-/*
-    *//**
-     4      * 静态工厂方法需要一个str型的值来初始化fragment的参数，
-     5      * 然后返回新的fragment到调用者
-     6      */
-   /* public static ClassFragment newInstance(String title, String content) {
-        ClassFragment f = new ClassFragment();
-        Bundle args = new Bundle();
-        args.putString("class_name", title);
-        args.putString("class_content", content);
-        f.setArguments(args);
-        return f;
-    }*/
 
 
     @Nullable
@@ -141,34 +124,34 @@ public class ClassFragment extends Fragment {
         stuList.clear();
         Stu s1 = new Stu();
         s1.setClassId(Long.valueOf(1));
-        s1.setStuName("高XX");
+        s1.setStuName("高琦琦");
         s1.setStuId(Long.valueOf(1));
         s1.setTaskgrade(96);
         s1.setSigncount(2);
-        s1.setStuPhone("186XXXXXXXX");
+        s1.setStuPhone("18640402213");
         stuList.add(s1);
 
         Stu s2 = new Stu();
         s2.setClassId(Long.valueOf(1));
         s2.setStuId(Long.valueOf(2));
-        s2.setStuName("金XX");
+        s2.setStuName("金昕昕");
         s2.setSigncount(1);
-        s2.setStuPhone("136XXXXXXXX");
+        s2.setStuPhone("13634152637");
         stuList.add(s2);
 
         Stu s3 = new Stu();
         s3.setClassId(Long.valueOf(2));
         s3.setStuId(Long.valueOf(3));
-        s3.setStuName("王XX");
+        s3.setStuName("王琳琳");
         s3.setSigncount(0);
-        s3.setStuPhone("156XXXXXXXX");
+        s3.setStuPhone("1563472547");
         stuList.add(s3);
 
         Stu s4 = new Stu();
         s4.setClassId(Long.valueOf(2));
         s4.setStuId(Long.valueOf(4));
-        s4.setStuName("宋X");
-        s4.setStuPhone("132XXXXXXXX");
+        s4.setStuName("宋鹏鹏");
+        s4.setStuPhone("13212546273");
         s4.setSigncount(0);
         stuList.add(s4);
 
@@ -222,7 +205,7 @@ public class ClassFragment extends Fragment {
     }
 
     private void queryClass(){
-        titleText.setText(" ");
+        titleText.setText("课堂列表");
         backButton.setVisibility(View.GONE);
         inviteButton.setVisibility(View.GONE);
    //     classList = DataSupport.findAll(Class.class);
@@ -245,10 +228,7 @@ public class ClassFragment extends Fragment {
             adapter.notifyDataSetChanged();
             listView.setSelection(0);
             currentLevel = LEVEL_CLASS;
-        }/*else {
-            String address = "http://guolin.tech/api/china";
-            queryFromServer(address,"province");
-        }*/
+        }
     }
 
     //根据输入地址从服务器上查数据
@@ -286,12 +266,7 @@ public class ClassFragment extends Fragment {
             adapter.notifyDataSetChanged();
             listView.setSelection(0);
             currentLevel = LEVEL_STU;
-        }/*else {
-            int provinceCode = selectedProvince.getProvinceCode();
-            int cityCode = selectedCity.getCityCode();
-            String address = "http://guolin.tech/api/china/" +provinceCode + "/" + cityCode;
-            queryFromServer(address,"county");
-        }*/
+        }
     }
 
     public void refresh(String classTitle, String classContent) {

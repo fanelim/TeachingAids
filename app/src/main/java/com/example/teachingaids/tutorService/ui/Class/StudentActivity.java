@@ -22,7 +22,7 @@ public class StudentActivity extends AppCompatActivity {
 
     private ScrollView studentLayout;
 
-    private TextView stuName,stuPhone,stuId,stuGrade,stuCount;
+    private TextView stuName,stuPhone,stuId,stuGrade,stuCount,testgrade;
 
     private ImageView viewreturn;
 
@@ -40,12 +40,13 @@ public class StudentActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.tea_activity_student);
-        studentLayout = (ScrollView) findViewById(R.id.student_layout);
+      //  studentLayout = (ScrollView) findViewById(R.id.student_layout);
         stuName = (TextView) findViewById(R.id.show_name);
         stuPhone = (TextView) findViewById(R.id.show_phone);
         stuId = (TextView) findViewById(R.id.show_stuid);
         stuCount = (TextView) findViewById(R.id.show_signcount);
         stuGrade = (TextView) findViewById(R.id.show_grade);
+        testgrade = (TextView) findViewById(R.id.test_grade);
 
         viewreturn = findViewById(R.id.iv_stureturn);
         viewreturn.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +58,8 @@ public class StudentActivity extends AppCompatActivity {
             }
         });
 
-        swipeRefresh = (SwipeRefreshLayout)findViewById(R.id.swipe_stu_refresh);
-        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
+       // swipeRefresh = (SwipeRefreshLayout)findViewById(R.id.swipe_stu_refresh);
+        //swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -81,13 +82,21 @@ public class StudentActivity extends AppCompatActivity {
        // studentLayout.setVisibility(View.INVISIBLE);
         requestInfo(stuId);
 
-        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+       /* swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 requestInfo(stuId);
             }
-        });
+        });*/
 
+       testgrade.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(StudentActivity.this, StudentTestActivity.class);
+               startActivity(intent);
+               finish();
+           }
+       });
     }
 
     public void requestInfo(final String  stuid){
