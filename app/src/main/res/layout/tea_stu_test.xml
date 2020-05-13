@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/tb_notiadd"
+                android:id="@+id/test_title"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary">
@@ -24,25 +24,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_left_circle"
-                    android:id="@+id/iv_notireturn"/>
+                    android:id="@+id/iv_testreturn"/>
 
                 <TextView
-                    android:id="@+id/tb_new_noti_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="第一次测验"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:layout_gravity="center"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_check_circle"
-                    android:layout_marginRight="18dp"
-                    android:layout_gravity="right"
-                    android:id="@+id/iv_notiadd"/>
-
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -62,23 +53,21 @@
                 android:background="@color/colorPrimary"
                 tools:ignore="MissingConstraints"
                 />
-
             <EditText
-                android:id="@+id/edit_note_title_et"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/white"
+                android:id="@+id/et_test_title"
+                android:textSize="20sp"
+                android:textStyle= "bold"
+                android:textColor="@color/black"
                 android:gravity="start|center_vertical"
                 android:hint="@string/input_title"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:textColor="@color/black"
                 android:textColorHint="@color/colorPrimary"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/white"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
                 app:elevation="5dp" />
-
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
@@ -86,7 +75,7 @@
                 tools:ignore="MissingConstraints"
                 />
             <EditText
-                android:id="@+id/edit_note_content_et"
+                android:id="@+id/et_test_content"
                 android:textSize="18sp"
                 android:lineSpacingExtra="5dp"
                 android:textColor="@color/black"

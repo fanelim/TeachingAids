@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,6 +53,67 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints"
+                />
+
+            <TextView
+                android:textSize="20sp"
+                android:textStyle= "bold"
+                android:text="指出f(x)=1/(1-x),x=1 函数在指定点是否间断，如果间断，指出是哪类间断点。"
+                android:textColor="@color/black"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:maxLines="4"
+                android:gravity="start|center_vertical"
+                android:hint="@string/input_title"
+                android:textColorHint="@color/light_gray"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                app:elevation="5dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/stu_startexam_write"
+            android:textSize="18sp"
+            android:lineSpacingExtra="5dp"
+            android:textColor="@color/black"
+            android:gravity="start|top"
+            android:hint="@string/input_content"
+            android:textColorHint="@color/light_gray"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            app:elevation="5dp"/>
+
+    </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/light_gray"
@@ -56,32 +122,115 @@
             android:focusable="true"
             android:focusableInTouchMode="true">
 
-            <TextView
-                android:id="@+id/stu_startexam_title"
-                android:textSize="20sp"
-                android:textStyle= "bold"
-                android:textColor="@color/black"
-                android:gravity="start|center_vertical"
-                android:hint="@string/input_title"
-                android:textColorHint="@color/light_gray"
-                android:maxLines="1"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginBottom="20dp"
-                android:padding="10dp"
-                app:elevation="5dp" />
+                >
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="MissingConstraints"
+                    />
+
+                <TextView
+
+                    android:text="设向量α、β的长度依次为2和3,则向量α+β与α-β的内积(α+β,α-β)="
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/input_title"
+                    android:maxLines="4"
+                    android:padding="10dp"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:elevation="5dp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
 
             <EditText
-                android:id="@+id/stu_startexam_write"
-                android:textSize="15sp"
+                android:id="@+id/stu_startexam_write2"
+                android:textSize="18sp"
                 android:lineSpacingExtra="5dp"
                 android:textColor="@color/black"
                 android:gravity="start|top"
                 android:hint="@string/input_content"
                 android:textColorHint="@color/light_gray"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/white"
+                android:padding="10dp"
+                app:elevation="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="MissingConstraints"
+                    />
+
+                <TextView
+
+                    android:text="为什么收敛的数列必有界"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/input_title"
+                    android:maxLines="4"
+                    android:padding="10dp"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:elevation="5dp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/stu_startexam_write3"
+                android:textSize="18sp"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/black"
+                android:gravity="start|top"
+                android:hint="@string/input_content"
+                android:textColorHint="@color/light_gray"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
                 android:background="@color/white"
                 android:padding="10dp"
                 app:elevation="5dp"/>
@@ -89,5 +238,6 @@
         </LinearLayout>
 
     </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

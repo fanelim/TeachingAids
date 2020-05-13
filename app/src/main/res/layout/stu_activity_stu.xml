@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/light_gray"
     tools:context=".studentService.ui.MyClass.StuActivity">
@@ -40,6 +40,15 @@
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
@@ -62,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/username"
             android:layout_marginBottom="40dp"
-            android:text="高XX"
+            android:text="高琦琦"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
 
@@ -71,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:text="186XXXXXXXX"
+            android:text="18547229008"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp"/>
 
@@ -231,5 +240,6 @@
         android:background="@null"/>
 
 
-
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

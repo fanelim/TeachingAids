@@ -83,15 +83,10 @@ public class MyTaskFragment extends Fragment {
 
         Exam e1 = new Exam();
         e1.setExam_classid(Long.valueOf(1));
-        e1.setExamTitle("指出f(x)=1/(1-x),x=1 函数在指定点是否间断，如果间断，指出是哪类间断点。");
+        e1.setExamTitle("2020_03_16第一次线上测验");
         e1.setExamScore(100);
         examList.add(e1);
 
-        Exam e2 = new Exam();
-        e2.setExam_classid(Long.valueOf(1));
-        e2.setExamTitle("为什么收敛的数列必有界");
-        e2.setExamScore(100);
-        examList.add(e2);
 
         Exam e3 = new Exam();
         e3.setExam_classid(Long.valueOf(3));
@@ -99,7 +94,7 @@ public class MyTaskFragment extends Fragment {
         e3.setExamScore(100);
         examList.add(e3);
 
-       // Adapter exam_adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,data_list);
+        // Adapter exam_adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,data_list);
         exam_adapter = new android.widget.ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1,exam_data_list);
         listView.setSelection(0);
         listView.setAdapter((ListAdapter) exam_adapter);
@@ -108,7 +103,7 @@ public class MyTaskFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectexam = exam_data_list.get(position);
 
-                Toast.makeText(getContext(), "选中了" + exam_data_list.get(position), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getContext(), "选中了" + exam_data_list.get(position), Toast.LENGTH_SHORT).show();
                 showTask(selectexam);
             }
 
@@ -200,7 +195,7 @@ public class MyTaskFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position != class_data_list.size()-1) {
-                    Toast.makeText(getContext(), "选择了 " + final_spinner.getSelectedItem().toString() + " 班级", Toast.LENGTH_SHORT).show();
+            //        Toast.makeText(getContext(), "选择了 " + final_spinner.getSelectedItem().toString() + " 班级", Toast.LENGTH_SHORT).show();
                     exam_data_list.clear();
                     selectedexamList.clear();
                     for (Class c: classList) {
@@ -208,7 +203,7 @@ public class MyTaskFragment extends Fragment {
                             if (c.getClassName() == final_spinner.getSelectedItem().toString()) {
                                 if (c.getId() == exam.getExam_classid())
                                     exam_data_list.add("题目： " + exam.getExamTitle() + " 分值: " + exam.getExamScore());
-                                    selectedexamList.add(exam);
+                                selectedexamList.add(exam);
                             }
                         }
                     }
