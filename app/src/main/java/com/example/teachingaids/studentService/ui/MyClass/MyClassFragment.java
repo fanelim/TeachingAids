@@ -18,20 +18,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.example.teachingaids.R;
 import com.example.teachingaids.db.Class;
 import com.example.teachingaids.db.Stu;
-import com.example.teachingaids.tutorService.ui.Class.ClassFragment;
-import com.example.teachingaids.tutorService.ui.Class.StudentActivity;
-import com.example.teachingaids.tutorService.ui.task.AddExamActivity;
-import com.example.teachingaids.tutorService.ui.task.ExamActivity;
-import com.google.android.material.navigation.NavigationView;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -132,7 +124,7 @@ public class MyClassFragment extends Fragment {
         Stu s2 = new Stu();
         s2.setClassId(Long.valueOf(2));
         s2.setStuId(Long.valueOf(2));
-        s2.setStuName("王洋洋");
+        s2.setStuName("高琦琦");
         s2.setSigncount(1);
         s2.setStuPhone("2222");
         stuList.add(s2);

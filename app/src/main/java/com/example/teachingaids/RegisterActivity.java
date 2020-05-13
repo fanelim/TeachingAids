@@ -147,48 +147,50 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         //学院
         sub_spinner = (Spinner) findViewById(R.id.subsubject_spinner);
 
-        subsubject_list.add(" 外国语言文学学院");
-        subsubject_list.add("文学院");
-        subsubject_list.add("国学院");
-        subsubject_list.add("马克思主义学院");
-        subsubject_list.add("法学院");
-        subsubject_list.add("经济与管理学院");
-        subsubject_list.add("历史学院");
-        subsubject_list.add("艺术学院");
-        subsubject_list.add("新闻与传播学院");
-        subsubject_list.add("物理科学与技术学院");
-        subsubject_list.add("数学与统计学院");
-        subsubject_list.add("信息管理学院");
-        subsubject_list.add("教育科学研究院");
-        subsubject_list.add("政治与公共管理学院");
-        subsubject_list.add("社会学院");
-        subsubject_list.add("电气与自动化学院");
-        subsubject_list.add("动力与机械学院");
-        subsubject_list.add("高等研究院");
-        subsubject_list.add("资源与环境科学学院");
-        subsubject_list.add("生命科学学院");
-        subsubject_list.add("化学与分子科学学院");
-        subsubject_list.add("计算机学院");
-        subsubject_list.add("电子信息学院");
-        subsubject_list.add("工业科学研究院");
-        subsubject_list.add("水利水电学院");
-        subsubject_list.add("土木建筑工程学院");
-        subsubject_list.add("城市设计学院");
-        subsubject_list.add("医学研究院");
-        subsubject_list.add("医学部机关");
-        subsubject_list.add("网络安全学院");
-        subsubject_list.add("印刷与包装系");
-        subsubject_list.add("遥感信息工程学院");
-        subsubject_list.add("测绘学院");
-        subsubject_list.add("口腔医学院");
-        subsubject_list.add("第二临床学院");
-        subsubject_list.add("第一临床学院");
-        subsubject_list.add("药学院");
-        subsubject_list.add("健康学院");
-        subsubject_list.add("基础医学院");
         subsubject_list.add("哲学学院");
-        subsubject_list.add("弘毅学堂");
-        subsubject_list.add("医学职业技术学院");
+        subsubject_list.add("国学院");
+        subsubject_list.add("文学院");
+        subsubject_list.add("外国语言文学学院");
+        subsubject_list.add("新闻与传播学院");
+        subsubject_list.add("艺术学院");
+        subsubject_list.add("历史学院");
+
+//        subsubject_list.add("马克思主义学院");
+//        subsubject_list.add("法学院");
+//        subsubject_list.add("经济与管理学院");
+//        subsubject_list.add("物理科学与技术学院");
+//        subsubject_list.add("数学与统计学院");
+//        subsubject_list.add("信息管理学院");
+//        subsubject_list.add("教育科学研究院");
+//        subsubject_list.add("政治与公共管理学院");
+//        subsubject_list.add("社会学院");
+//        subsubject_list.add("电气与自动化学院");
+//        subsubject_list.add("动力与机械学院");
+//        subsubject_list.add("高等研究院");
+//        subsubject_list.add("资源与环境科学学院");
+//        subsubject_list.add("生命科学学院");
+//        subsubject_list.add("化学与分子科学学院");
+//        subsubject_list.add("计算机学院");
+//        subsubject_list.add("电子信息学院");
+//        subsubject_list.add("工业科学研究院");
+//        subsubject_list.add("水利水电学院");
+//        subsubject_list.add("土木建筑工程学院");
+//        subsubject_list.add("城市设计学院");
+//        subsubject_list.add("医学研究院");
+//        subsubject_list.add("医学部机关");
+//        subsubject_list.add("网络安全学院");
+//        subsubject_list.add("印刷与包装系");
+//        subsubject_list.add("遥感信息工程学院");
+//        subsubject_list.add("测绘学院");
+//        subsubject_list.add("口腔医学院");
+//        subsubject_list.add("第二临床学院");
+//        subsubject_list.add("第一临床学院");
+//        subsubject_list.add("药学院");
+//        subsubject_list.add("健康学院");
+//        subsubject_list.add("基础医学院");
+//        subsubject_list.add("哲学学院");
+//        subsubject_list.add("弘毅学堂");
+//        subsubject_list.add("医学职业技术学院");
 
 
         subsubject_adapter = new ArrayAdapter<String>(RegisterActivity.this,android.R.layout.simple_dropdown_item_1line, subsubject_list) {
@@ -223,7 +225,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position !=subsubject_list.size()-1) {
-                    Toast.makeText(getContext(), "选择了 " + main_spinner.getSelectedItem().toString() + " 学院", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "选择了 " + sub_spinner.getSelectedItem().toString() + " 学院", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -233,7 +235,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 mainsub_adapter.add(getString(R.string.option_click_to_choose));
                 //      final_spinner.setSelection(adapter.getCount());
                 main_spinner.setAdapter(mainsub_adapter);
-                ((BaseAdapter) main_spinner.getAdapter()).notifyDataSetChanged();
+                ((BaseAdapter) sub_spinner.getAdapter()).notifyDataSetChanged();
 
             }
         });

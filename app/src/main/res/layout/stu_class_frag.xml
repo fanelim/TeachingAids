@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textColor="@color/colorPrimary"
-                android:textSize="20sp"/>
+                android:textSize="15sp"/>
 
             <Button
                 android:id="@+id/stu_back_button"
@@ -94,7 +94,7 @@
                 android:id="@+id/stu_check_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="点击签到"
+                android:text="签到"
                 android:textColor="@color/colorPrimary"
                 android:layout_marginLeft="280dp"
                 android:layout_centerVertical="true"

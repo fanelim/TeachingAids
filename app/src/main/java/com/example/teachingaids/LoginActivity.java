@@ -66,8 +66,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Looper.loop();
                         }
 
-                        if (rb1&&account.equals("001t") && psw.equals("123456")) {
-
+                        if (rb1&&account.equals("15258250688") && psw.equals("123456")) {
                             Looper.prepare();
                             Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
                             Intent intent=new Intent(LoginActivity.this, TeaMain.class);

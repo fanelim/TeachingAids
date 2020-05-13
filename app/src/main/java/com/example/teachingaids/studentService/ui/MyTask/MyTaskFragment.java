@@ -83,7 +83,7 @@ public class MyTaskFragment extends Fragment {
 
         Exam e1 = new Exam();
         e1.setExam_classid(Long.valueOf(1));
-        e1.setExamTitle("2020_03_16第一次线上测验");
+        e1.setExamTitle("2020_03_16 测验(1)");
         e1.setExamScore(100);
         examList.add(e1);
 
@@ -111,7 +111,7 @@ public class MyTaskFragment extends Fragment {
                 if (!written) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle("提示");
-                    builder.setMessage("是否确定答题？");
+                    builder.setMessage("是否开始测验？");
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -132,7 +132,7 @@ public class MyTaskFragment extends Fragment {
                     builder.show();
                 }
                 else {
-                    Toast.makeText(getContext(), "已答过此题", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "已参与过此次测验", Toast.LENGTH_SHORT).show();
 
                 }
             };
@@ -202,7 +202,7 @@ public class MyTaskFragment extends Fragment {
                         for (Exam exam : examList) {
                             if (c.getClassName() == final_spinner.getSelectedItem().toString()) {
                                 if (c.getId() == exam.getExam_classid())
-                                    exam_data_list.add("题目： " + exam.getExamTitle() + " 分值: " + exam.getExamScore());
+                                    exam_data_list.add(exam.getExamTitle() + " 分值: " + exam.getExamScore());
                                 selectedexamList.add(exam);
                             }
                         }
