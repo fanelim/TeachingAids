@@ -27,9 +27,9 @@
                     android:id="@+id/iv_notireturn"/>
 
                 <TextView
+                    android:id="@+id/tb_new_noti_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="新 通 知"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/white"

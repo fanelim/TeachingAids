@@ -1,4 +1,4 @@
-package com.example.teachingaids.tutorService.ui.task;
+package com.example.teachingaids.tutorService.ui.task.notify;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -17,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.teachingaids.R;
+import com.example.teachingaids.tutorService.ui.task.TaskFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.litepal.LitePal;
@@ -28,7 +28,7 @@ import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
-public class NotiFragment extends Fragment implements NotiAdapter.OnItemClickListener{
+public class NotiFragment extends Fragment implements NotiAdapter.OnItemClickListener {
 
     private RecyclerView mrecyclerView;
 
@@ -41,11 +41,6 @@ public class NotiFragment extends Fragment implements NotiAdapter.OnItemClickLis
     private boolean isDelete = false;
 
     private List<NotiCard> deleteCardList;
-
-
-
-    private ImageView imreturn;
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -88,22 +83,22 @@ public class NotiFragment extends Fragment implements NotiAdapter.OnItemClickLis
             }
         });
 
-return view;
+        return view;
     }
 
     private void returnFragment(TaskFragment taskFragment) {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.task_fragment,taskFragment);
+        transaction.replace(R.id.task_fragment, taskFragment);
         transaction.commit();
     }
 
 
     // 判断是否是第一次使用，显示note操作指南
-    private void isFirstLogin(){
+    private void isFirstLogin() {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("data", Context.MODE_PRIVATE);
-        boolean first = sharedPreferences.getBoolean("isfirst",true);
-        if (first){
+        boolean first = sharedPreferences.getBoolean("isfirst", true);
+        if (first) {
             // 设置时间格式及获取当前时间
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date date = new Date(System.currentTimeMillis());
@@ -116,31 +111,29 @@ return view;
             notiCard.save();
             //修改first数据
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean("isfirst",false);
+            editor.putBoolean("isfirst", false);
             editor.apply();
         }
     }
 
     //初始化列表
-    private void readDatabaseAndSetList(){
+    private void readDatabaseAndSetList() {
         notiCardList = LitePal.order("position desc").find(NotiCard.class);
         notiAdapter = new NotiAdapter(notiCardList);
         mrecyclerView.setAdapter(notiAdapter);
-     //   Log.d("my", "初始化列表1 "+System.identityHashCode(notiAdapter.mNoteCardList));
-    //   Log.d("my", "初始化列表2 "+System.identityHashCode(noteCardList));
     }
 
     // startActivityForResult的反馈
     @Override
-    public void onActivityResult(int requestCode, int resultCode,Intent data){
-        switch (requestCode){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
             case 1:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     String title = data.getStringExtra("title");
                     String content = data.getStringExtra("content");
                     // 获取最大位置
                     int position;
-                    if(LitePal.findAll(NotiCard.class).size() != 0) // 列表不为空
+                    if (LitePal.findAll(NotiCard.class).size() != 0) // 列表不为空
                         position = LitePal.order("position desc").findFirst(NotiCard.class).getPosition() + 1;
                     else
                         position = 1;
@@ -155,7 +148,6 @@ return view;
                     notiCardList.add(0, notiCard);   //将新增的notecard添加在列表的第一个
                     notiAdapter.notifyDataSetChanged();
 //                    Log.d("my", "新建 "+System.identityHashCode(noteCardList));
-
                 }
                 break;
             default:
@@ -164,11 +156,10 @@ return view;
 
     // 当编辑时设置NoteFragment相关的界面
     @Override
-    public void setNoteFragment(){
+    public void setNoteFragment() {
         fab.setImageResource(R.drawable.ic_trash);
         isDelete = true;
     }
-
 
 
 }

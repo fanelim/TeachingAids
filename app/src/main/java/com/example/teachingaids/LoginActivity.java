@@ -19,7 +19,7 @@ import com.example.teachingaids.tutorService.TeaMain;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private RadioButton rb_1;//学生教师
     private EditText editUser, editPassword;//用户密码输入框
-    private Button bt_login,bt_register;//登陆注册按钮
+    private Button bt_login, bt_register;//登陆注册按钮
     private ImageView wechat, QQ;//微信QQ
     private String currentUsername, currentPassword;//当前输入
 
@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void init() {
-
         editUser = (EditText) findViewById(R.id.ET_username);
         editPassword = (EditText) findViewById(R.id.ET_password);
         rb_1 = (RadioButton) findViewById(R.id.RB_1);
@@ -47,7 +46,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         bt_register.setOnClickListener(this);
         wechat.setOnClickListener(this);
         QQ.setOnClickListener(this);
-
     }
 
     @Override
@@ -94,7 +92,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Looper.loop();
 
                         }
-
                         //以上为jdbc登录
                     }
                 }).start();

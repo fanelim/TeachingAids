@@ -1,4 +1,4 @@
-package com.example.teachingaids.tutorService.ui.task;
+package com.example.teachingaids.tutorService.ui.task.notify;
 
 
 import android.content.Context;

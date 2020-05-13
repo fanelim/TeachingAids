@@ -1,4 +1,4 @@
-package com.example.teachingaids.tutorService.ui.task;
+package com.example.teachingaids.tutorService.ui.task.notify;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -18,20 +19,14 @@ import com.example.teachingaids.R;
 public class AddNotiActivity extends AppCompatActivity {
 
     private EditText mTiltle;
-
     private EditText mContent;
+    private TextView textView;
+    private ImageView notireturn, notiadd;
+
 
     private boolean isCreate;
-
     private String before_title;
-
     private String before_content;
-
-    private long mId;
-
-    private int position_in_the_list;
-
-    private ImageView notiadd,notireturn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +36,13 @@ public class AddNotiActivity extends AppCompatActivity {
     }
 
 
-    private void initText(){
+    private void initText() {
         mTiltle = findViewById(R.id.edit_note_title_et);
         mContent = findViewById(R.id.edit_note_content_et);
+        textView = findViewById(R.id.tb_new_noti_title);
         notiadd = findViewById(R.id.iv_notiadd);
         notireturn = findViewById(R.id.iv_notireturn);
+
         notiadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +53,6 @@ public class AddNotiActivity extends AppCompatActivity {
                         Toast.makeText(AddNotiActivity.this, "输入内容不能为空", Toast.LENGTH_SHORT).show();
 
                     } else {
-
                         AlertDialog.Builder builder = new AlertDialog.Builder(AddNotiActivity.this);
                         builder.setTitle("提示");
                         builder.setMessage("是否确定提交？");
@@ -77,34 +73,9 @@ public class AddNotiActivity extends AppCompatActivity {
                             }
                         });
                         builder.show();
-                            /*String after_title = mTiltle.getText().toString();
-                            String after_content = mContent.getText().toString();
-                            if (!after_title.equals(before_title) || !after_content.equals(before_content)) {
-                                // 是修改，且有内容变换
-                                int position = LitePal.order("position desc")
-                                        .findFirst(NotiCard.class)
-                                        .getPosition() + 1; //找到最大位置的
-                                NotiCard notiCard = LitePal.find(NotiCard.class,mId);   //在数据库中按ID值查找
-                                NotiFragment.notiCardList.remove(position_in_the_list); //删除原先位置的卡片
-//                        Log.d("my", "有修改1 "+System.identityHashCode(NoteFragment.noteCardList));
-                                // 更新数值
-                                // 设置时间格式及获取当前时间
-                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                                Date date = new Date(System.currentTimeMillis());
-                                notiCard.setPosition(position);
-                                notiCard.setTitle(after_title);
-                                notiCard.setContent(after_content);
-                                notiCard.setTime(simpleDateFormat.format(date));
-                                notiCard.save();
-                                NotiFragment.notiCardList.add(0, notiCard);   //将新增的notecard添加在列表的第一个
-                                NotiFragment.notiAdapter.notifyDataSetChanged();
-//                        Log.d("my", "有修改2 "+System.identityHashCode(NoteFragment.noteCardList));
-                            }*/
                     }
                 }
-
-                }
-
+            }
 
         });
 
@@ -118,8 +89,6 @@ public class AddNotiActivity extends AppCompatActivity {
 
         // 获取点击的NoteCard的信息
         Intent intent = getIntent();
-        mId = intent.getLongExtra("id",0);
-        position_in_the_list = intent.getIntExtra("position_in_the_list",0);
         before_title = intent.getStringExtra("title");
         before_content = intent.getStringExtra("content");
 
@@ -129,8 +98,10 @@ public class AddNotiActivity extends AppCompatActivity {
             isCreate = false;
             mTiltle.setText(before_title);
             mContent.setText(before_content);
-        }
-        else {
+
+            textView.setText("通知浏览");
+            notiadd.setVisibility(View.GONE);
+        } else {
             //内容为空,是新创建
             isCreate = true;
             //标题获得焦点，自动弹出软键盘
@@ -138,6 +109,9 @@ public class AddNotiActivity extends AppCompatActivity {
             mTiltle.setFocusableInTouchMode(true);
             mTiltle.requestFocus(); //强制获取焦点
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+            textView.setText("添加通知");
+            notiadd.setVisibility(View.VISIBLE);
         }
     }
 

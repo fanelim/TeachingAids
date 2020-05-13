@@ -1,8 +1,10 @@
-package com.example.teachingaids.tutorService.ui.task;
+package com.example.teachingaids.tutorService.ui.task.notify;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,16 +12,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.teachingaids.R;
 
 public class NotiActivity extends AppCompatActivity {
-    //private Toolbar mtoolbar;
-
     private ImageView returnTask;
+    private TextView textView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tea_activity_noti);
+
+        textView = findViewById(R.id.tb_noti_text);
         returnTask = findViewById(R.id.iv_notifrag_return);
-       //mtoolbar = findViewById(R.id.tb_noti);
+
+        Intent intent = getIntent();
+        String className = intent.getStringExtra("className");
+        textView.setText(className + " - 通知");
+
         returnTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,25 +34,4 @@ public class NotiActivity extends AppCompatActivity {
             }
         });
     }
-
-/*
-    //设置toolbar，并添加Back键
-    private void setToolbar(){
-
-        setSupportActionBar(mtoolbar);
-        ActionBar actionbar = getSupportActionBar();
-        if (actionbar != null){
-            actionbar.setDisplayHomeAsUpEnabled(true);
-            actionbar.setHomeAsUpIndicator(R.drawable.ic_left_circle);
-        }
-    }
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case android.R.id.home:
-                onBackPressed();
-                break;
-            default:
-        }
-        return true;
-    }*/
 }

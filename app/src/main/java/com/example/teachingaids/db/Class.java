@@ -2,7 +2,6 @@ package com.example.teachingaids.db;
 
 import com.orm.SugarRecord;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -10,15 +9,15 @@ public class Class extends SugarRecord {
     public Long ClassId;
     public String ClassName;
     public String ClassContent;
-    public ArrayList<Stu> stuList;
+    public List<Stu> stuList;
     public String Noti; //公告表
     public int position;
 
-    public ArrayList<Stu> getStuList() {
+    public List<Stu> getStuList() {
         return stuList;
     }
 
-    public void setStuList(ArrayList<Stu> stuList) {
+    public void setStuList(List<Stu> stuList) {
         this.stuList = stuList;
     }
 
@@ -59,7 +58,6 @@ public class Class extends SugarRecord {
         this.ClassContent = Content;
     }
     public Class(){
-
     }
 
 }

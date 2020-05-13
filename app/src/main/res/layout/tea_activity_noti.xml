@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".tutorService.ui.task.NotiActivity">
+    tools:context=".tutorService.ui.task.notify.NotiActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -24,9 +24,9 @@
                 android:id="@+id/iv_notifrag_return"/>
 
             <TextView
+                android:id="@+id/tb_noti_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="通知栏"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -41,6 +41,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout = "@layout/tea_note_frag"
-        android:name="com.example.teachingaids.tutorService.ui.task.NotiFragment"/>
+        android:name="com.example.teachingaids.tutorService.ui.task.notify.NotiFragment"/>
 
 </LinearLayout>

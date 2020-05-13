@@ -1,133 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_gray">
+    android:background="@color/light_gray"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/include"
         layout="@layout/title"></include>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
+        android:orientation="vertical"
+        android:padding="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:background="@color/white"
                 android:orientation="vertical">
 
-            <Button
-                android:id="@+id/bt_addclass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/white"
-                android:text="新建课堂"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25sp"
-                 />
+                <Button
+                    android:id="@+id/bt_addclass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_circle_shape"
+                    android:text="新建课堂"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="10dp"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:background="@color/white"
                 android:orientation="vertical">
 
-            <Button
-                android:id="@+id/bt_apply"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="新的申请"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25sp" />
+                <Button
+                    android:id="@+id/bt_apply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/btn_circle_shape"
+                    android:text="添加学生"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp" />
             </LinearLayout>
-
         </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimary"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="31dp"
-            tools:layout_editor_absoluteY="157dp" />
 
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/white">
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/white">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white">
 
-        <TextView
-            android:id="@+id/title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"/>
+                <Button
+                    android:id="@+id/back_button"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ic_sign_in" />
 
-        <Button
-            android:id="@+id/back_button"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/ic_sign_in" />
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp" />
 
-        <Button
-            android:id="@+id/invite_button"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="分享课堂"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginRight="10dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            />
+                <Button
+                    android:id="@+id/invite_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:text="分享课堂"
+                    android:textColor="@color/colorPrimary" />
 
+            </RelativeLayout>
 
-    </RelativeLayout>
-
-    <ListView
-        android:id="@+id/list_view"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-       />
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
         </LinearLayout>
 
-
-</LinearLayout>
+    </LinearLayout>
 </LinearLayout>

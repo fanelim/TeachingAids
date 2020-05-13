@@ -1,10 +1,10 @@
-package com.example.teachingaids.tutorService.ui.task;
+package com.example.teachingaids.tutorService.ui.task.notify;
 
 
 import org.litepal.crud.LitePalSupport;
 
 
-//发布的通知
+// 发布的通知
 public class NotiCard extends LitePalSupport {
 
     private long id;

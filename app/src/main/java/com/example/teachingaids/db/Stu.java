@@ -81,4 +81,14 @@ public class Stu extends SugarRecord {
     public void setStuName(String stuName) {
         StuName = stuName;
     }
+
+    public Stu() {
+    }
+
+    public Stu(Long stuId, String stuName, String stuPhone, int signcount) {
+        StuId = stuId;
+        StuName = stuName;
+        StuPhone = stuPhone;
+        this.signcount = signcount;
+    }
 }

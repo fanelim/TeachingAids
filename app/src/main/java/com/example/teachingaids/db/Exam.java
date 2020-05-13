@@ -1,10 +1,19 @@
 package com.example.teachingaids.db;
 
 public class Exam {
+    private Long id;
     public String examTitle;
     public String examContent;
     public int examScore;
     public Long exam_classid;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getExam_classid() {
         return exam_classid;

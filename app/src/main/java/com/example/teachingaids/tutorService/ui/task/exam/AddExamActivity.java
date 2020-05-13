@@ -1,4 +1,4 @@
-package com.example.teachingaids.tutorService.ui.task;
+package com.example.teachingaids.tutorService.ui.task.exam;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,12 +17,8 @@ import com.example.teachingaids.R;
 public class AddExamActivity extends AppCompatActivity {
     //写题目，写分值，返回，添加成功
 
-    private EditText examtitle,examscore;
-
-
-    private ImageView addexam,returnexam;
-
-
+    private EditText examtitle, examscore;
+    private ImageView addexam, returnexam;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,7 +49,7 @@ public class AddExamActivity extends AppCompatActivity {
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent intent =new Intent(AddExamActivity.this,ExamActivity.class);
+                    Intent intent =new Intent(AddExamActivity.this, ExamActivity.class);
                     intent.setAction("addexam");
                     intent.putExtra("exam_title",examtitle.getText().toString());
                     intent.putExtra("exam_score",examscore.getText().toString());
